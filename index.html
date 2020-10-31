@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Apna Ghar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="cw-css.css">
+  <style type="text/css">
+    div a{
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark fixed" style="background-color: #222222; color: #f2f2f2;">
+  <h3><a class="navbar-brand" href="index.html">Apna Ghar</a></h3>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="document.getElementById('id01').style.display='block'">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">SignUp</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about us.html">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about us.html">Properties</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" method="post">
+    <div class="imgcontainer">
+      <h2 align="center">Login</h2>
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="form-container">
+      <label for="uname"><b>Email</b></label>
+      <input type="email" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="form-container" style="background-color:#f1f1f1;width: 100%;">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn-danger cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#" style="color: black;" onclick="document.getElementById('id01').style.display='none';
+      document.getElementById('id03').style.display='block'">password?</a></span>
+    </div>
+  </form>
+</div>
+<div id="id02" class="modal" style="overflow-y: auto;">
+  <form class="modal-content" onsubmit="return validation()">
+    <div class="imgcontainer">
+      <h2 align="center">Sign Up</h2>
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    <div class="form-container">
+      <div class="form-group">
+        <label>UserName :</label>
+        <input type="text" name="" id="username" class="form-control" autocomplete="off">
+        <span id="usererror" class="text-danger font-weight-bold"></span>
+      </div>
+
+      <div class="form-group">
+        <label>Password :</label>
+        <input type="password" onkeyup="myFunction()" id="password" class="form-control" autocomplete="off">
+        <span id="passerror1" class="font-weight-bold"></span>
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Password :</label>
+        <input type="password" onkeyup="myFunction()" name="" id="cpassword" class="form-control" autocomplete="off">
+        <span id="cpassworderror" class="text-danger font-weight-bold"></span>
+      </div>
+
+      <div class="form-group">
+        <label>Email :</label>
+        <input type="text" name="" id="email" class="form-control" autocomplete="off">
+        <span id="emailerror" class="text-danger font-weight-bold"></span>
+      </div>
+
+      <div class="form-group">
+        <label>Mobile Number :</label>
+        <input type="text" name="" id="number" class="form-control" autocomplete="off">
+        <span id="mobileerror" class="text-danger font-weight-bold"></span>
+      </div>
+      <br>
+      <input type="submit" class="btn btn-success" name="">
+    </div>
+  </form>
+</div>
+<div id="id03" class="modal" style="overflow: visible;">
+  <form class="modal-content">
+    <div class="imgcontainer">
+      <h2>Send OTP</h2>
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    <div class="form-container">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+      <button type="submit" onclick="document.getElementById('otp').style.display='block'" class="signupbtn">Send OTP</button>
+    </div>
+    <div class="form-container" id="otp" style="display: none;">  
+      <label for="psw"><b>OTP</b></label>
+      <input type="text" placeholder="Enter OTP" name="psw" required>
+      <button type="submit" class="signupbtn" onclick="document.getElementById('id03').style.display='none';
+      document.getElementById('id04').style.display='block';">
+      Confirm</button>
+    </div>
+  </form>
+</div>
+<div id="id04" class="modal">
+  <form class="modal-content">
+    <div class="imgcontainer">
+      <h2>Change Password</h2>
+      <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    <div class="form-container" id="change">  
+      <label for="psw"><b>password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <button type="submit" class="signupbtn">change password</button>
+    </div>
+  </form>
+</div>
+<div>
+  <div style="background-image: url('images/img3.jpg'); width: 100%; height: 550px;color:#fff;">
+    <div style="padding-left:100px;padding-top: 100px;">
+      <h1>Shop With Us</h1>
+      <p class="mb-5 lead">Lorem ipsum dolor sit amet <br>consectetur adipisicing elit.<br> Laboriosam assumenda ea quo cupiditate <br>facere deleniti fuga officia.</p>
+      <button type="submit" class="btn btn-primary">Explore Properties</button>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="container-fluid bg-3 text-center">    
+  <h3>City</h3><br>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Pune</p>
+      <img src="images/pune.png" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3"> 
+      <p>Mumbai</p>
+      <img src="images/mumbai.jpg" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3"> 
+      <p>Delhi</p>
+      <img src="images/delhi.jpg" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Hyderabad</p>
+      <img src="images/hyderabad.jpg" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div><br>
+
+
+<div style="width: 100%;">
+  <div class="slideshow-container">
+
+  <div class="mySlides">
+    <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+    <p class="author">- John Keats</p>
+  </div>
+
+  <div class="mySlides">
+    <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+    <p class="author">- Ernest Hemingway</p>
+  </div>
+
+  <div class="mySlides">
+    <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+    <p class="author">- Thomas A. Edison</p>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  </div>
+
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+</div><br><br>
+<div class="container-fluid text-center" id="footer" style="margin-bottom:0; background-color: #3b3b3b; color: #f2f2f2; text-decoration: none;">
+  <div class="d-flex flex-md-row">
+    <div class="p-2 flex-fill justify-content-between">
+      <div>
+        <div><h3>Menu</h3></div><br>
+        <div><a href="index.html">Home</a></div>
+        <div><a href="#services">Services</a></div>
+        <div><a href="contact.html">Contact us</a></div>
+        <div><a href="about us.html">About us</a></div>
+        <div><a href="privacy.html">Copyright & Privacy Policy</a></div>
+        <div><a href="terms.html">Terms & conditions</a></div>
+      </div><br>
+    </div>
+    <div class="p-2 flex-fill">
+      <div>
+        <div><h3>Cities</h3></div><br>
+        <div><a href="#">Hyderabad</a></div>
+        <div><a href="#">Pune</a></div>
+        <div><a href="#">Delhi</a></div>
+        <div><a href="#">Deharadun</a></div>
+        <div><a href="#">Mumbai</a></div>
+        <div><a href="#">Ahmadabad</a></div>
+      </div>
+    </div>
+    <div class="p-2 flex-fill">
+      <form action="/action_page.php">
+        <div><h3>Feedback</h3></div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="comment">Feedback:</label>
+            <textarea class="form-control" rows="5" id="comment" style="resize: none;" 
+        placeholder="Please enter your valuable feedback here..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div>
+  <i class="fa fa-copyright"></i> 2020 Apna Ghar all rights are reserved.
+</div>
+</div><br>
+<script type="text/javascript">
+    
+    function myFunction() {
+
+      var password = document.getElementById('password').value;
+
+        var passcheck1 =/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[%#!@\$])[a-zA-z0-9%#!@\$]{8,15}$/;
+      var passcheck2 =/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-z0-9]{8,15}$/;
+      var passcheck3 =/^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,15}$/;
+
+      if (passcheck1.test(password))
+      {
+        document.getElementById('passerror1').style.color="green";
+        document.getElementById('passerror1').innerHTML=" ** Password is Strong ";
+      }
+      else if(passcheck2.test(password))
+      {
+        document.getElementById('passerror1').style.color="#d8ad11";
+        document.getElementById('passerror1').innerHTML=" ** Password is Moderate ";
+      }
+      else
+      {
+        document.getElementById('passerror1').style.color="red";
+        document.getElementById('passerror1').innerHTML=" ** Password is Week ";
+      }
+    }
+
+    function validation()
+    {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var cpassword = document.getElementById('cpassword').value;
+      var email = document.getElementById('email').value;
+      var number = document.getElementById('number').value;
+
+      var usercheck  = /^[A-Z a-z 0-9]{3,30}$/;
+      var passcheck1 =/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[%#!@\$])[a-zA-z0-9%#!@\$]{8,15}$/;
+      var passcheck2 =/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-z0-9]{8,15}$/;
+      var passcheck3 =/^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,15}$/;
+      var phonecheck =/^[9+8+7+6][0-9]{9}$/;
+      var emailcheck =/^[a-zA-z][a-zA-Z0-9]{2,10}([a-zA-Z0-9][\.+\-+\_]){0,5}[a-zA-Z0-9]{2,10}@([a-zA-Z0-9]{2,8}\.){1,4}[a-zA-Z0-9]{2,5}$/;
+
+      if (usercheck.test(username))
+      {
+        document.getElementById('usererror').innerHTML=" ";
+      }
+      else
+      {
+        document.getElementById('usererror').innerHTML=" ** UseerName is Invalid ";
+        return false;
+      }
+
+      if (passcheck1.test(password))
+      {
+        document.getElementById('passerror1').style.color="green";
+        document.getElementById('passerror1').innerHTML=" ** Password is Strong ";
+      }
+      else if(passcheck2.test(password))
+      {
+        document.getElementById('passerror1').style.color="#d8ad11";
+        document.getElementById('passerror1').innerHTML=" ** Password is Moderate ";
+      }
+      else
+      {
+        document.getElementById('passerror1').style.color="red";
+        document.getElementById('passerror1').innerHTML=" ** Password is Week ";
+        return false;
+      }
+
+      if (cpassword.match(password))
+      {
+        document.getElementById('cpassworderror').innerHTML=" ";
+      }
+      else
+      {
+        document.getElementById('cpassworderror').innerHTML=" ** Password is not matching ";
+        return false;
+      }
+
+      if (phonecheck.test(number))
+      {
+        document.getElementById('mobileerror').innerHTML=" ";
+      }
+      else
+      {
+        document.getElementById('mobileerror').innerHTML=" ** Mobile Number is Invalid";
+        return false;
+      }
+
+      if (emailcheck.test(email))
+      {
+        document.getElementById('emailerror').innerHTML=" ";
+      }
+      else
+      {
+        document.getElementById('emailerror').innerHTML=" ** Email is Invalid";
+        return false;
+      }
+
+      alert('Congratulations....Your form submitted successfully...!!!!')
+    }
+
+  </script>
+<script type="text/javascript">
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>

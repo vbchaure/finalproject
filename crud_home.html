@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> CRUD Home </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
+</head>
+<body>
+<h1 class="text-center bg-dark text-white" style="width:40%;padding: 10px 0 10px 0;margin-left: 30%;margin-top: 50px;"> CRUD On Home </h1><br>
+<div style="overflow-x:auto; padding: 10px 20px 10px 30px;">
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Username" title="Type in a name">
+  <table id="myTable">
+    <tr>
+      <th>Home_Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>price</th>
+      <th>Detail</th>
+      <th>Image</th>
+      <th>Type</th>
+      <th>Category</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Jill</td>
+      <td>vbchaure@mitaoe.ac.in</td>
+      <td>At post Kasbe Tadwale</td>
+      <td>Osmanabad</td>
+      <td>2000000</td>
+      <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+      <td>jniayveu81973</td>
+      <td>Renting</td>
+      <td>2 BHK</td>
+      <td><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+      <td><a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Eve</td>
+      <td>vbchaure@mitaoe.ac.in</td>
+      <td>At post Kasbe Tadwale</td>
+      <td>Osmanabad</td>
+      <td>2000000</td>
+      <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+      <td>jniayveu81973</td>
+      <td>Renting</td>
+      <td>2 BHK</td>
+      <td><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+      <td><a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Adam</td>
+      <td>vbchaure@mitaoe.ac.in</td>
+      <td>At post Kasbe Tadwale</td>
+      <td>Osmanabad</td>
+      <td>2000000</td>
+      <td> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+      <td>jniayveu81973</td>
+      <td>Renting</td>
+      <td>2 BHK</td>
+      <td><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+      <td><a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+    </tr>
+  </table>
+</div><br>
+<div class="pagination" style="text-align: center;align-items: center;justify-content: center;">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+<br><br>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</body>
+</html>

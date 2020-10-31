@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Apna Ghar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="cw-css.css">
+  <style type="text/css">
+    body{
+      background-color: #fff;
+    }
+    div a{
+      color: #fff;
+    }
+    .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f1f1f1;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: cyan;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#myInput{
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 80%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 228px;
+  background: #ddd;
+  font-size: 25px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark fixed" style="background-color: #222222; color: #f2f2f2;">
+  <h3><a class="navbar-brand" href="index.html">Apna Ghar</a></h3>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about us.html">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about us.html">Properties</a>
+      </li>    
+    </ul>
+  </div>  
+</nav><br><br>
+<span style="font-size:30px;cursor:pointer;margin-left: 5px;" onclick="openNav()">&#9776;</span>
+<div class="search-container" style="margin-left: 10%;">
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search According to city" title="Type in a name"><button type="submit"><i class="fa fa-search"></i></button>
+</div>
+
+<div class="container-fluid bg-3 text-center"><br><br>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Pune</p>
+      <a href="property_detail.html"><img src="images/pune.png" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Mumbai</p>
+      <a href="property_detail.html"><img src="images/mumbai.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Delhi</p>
+      <a href="property_detail.html"><img src="images/delhi.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3">
+      <p>Hyderabad</p>
+      <a href="property_detail.html"><img src="images/hyderabad.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Pune</p>
+      <a href="property_detail.html"><img src="images/pune.png" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Mumbai</p>
+      <a href="property_detail.html"><img src="images/mumbai.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Delhi</p>
+      <a href="property_detail.html"><img src="images/delhi.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3">
+      <p>Hyderabad</p>
+      <a href="property_detail.html"><img src="images/hyderabad.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Pune</p>
+      <a href="property_detail.html"><img src="images/pune.png" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Mumbai</p>
+      <a href="property_detail.html"><img src="images/mumbai.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Delhi</p>
+      <a href="property_detail.html"><img src="images/delhi.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3">
+      <p>Hyderabad</p>
+      <a href="property_detail.html"><img src="images/hyderabad.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Pune</p>
+      <a href="property_detail.html"><img src="images/pune.png" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Mumbai</p>
+      <a href="property_detail.html"><img src="images/mumbai.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Delhi</p>
+      <a href="property_detail.html"><img src="images/delhi.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+    <div class="col-sm-3">
+      <p>Hyderabad</p>
+      <a href="property_detail.html"><img src="images/hyderabad.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </div>
+  </div>
+</div><br>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">My Profile</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Setting</a>
+  <a href="#">Contact</a>
+</div>
+
+<div class="pagination" style="text-align: center;align-items: center;justify-content: center;">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+<br><br>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+<div class="container-fluid text-center" id="footer" style="margin-bottom:0; background-color: #3b3b3b; color: #f2f2f2; text-decoration: none;">
+  <div class="d-flex flex-md-row">
+    <div class="p-2 flex-fill justify-content-between">
+      <div>
+        <div><h3>Menu</h3></div><br>
+        <div><a href="index.html">Home</a></div>
+        <div><a href="#services">Services</a></div>
+        <div><a href="contact.html">Contact us</a></div>
+        <div><a href="about us.html">About us</a></div>
+        <div><a href="privacy.html">Copyright & Privacy Policy</a></div>
+        <div><a href="terms.html">Terms & conditions</a></div>
+      </div><br>
+    </div>
+    <div class="p-2 flex-fill">
+      <div>
+        <div><h3>Cities</h3></div><br>
+        <div><a href="#">Hyderabad</a></div>
+        <div><a href="#">Pune</a></div>
+        <div><a href="#">Delhi</a></div>
+        <div><a href="#">Deharadun</a></div>
+        <div><a href="#">Mumbai</a></div>
+        <div><a href="#">Ahmadabad</a></div>
+      </div>
+    </div>
+    <div class="p-2 flex-fill">
+      <form action="/action_page.php">
+        <div><h3>Feedback</h3></div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="comment">Feedback:</label>
+            <textarea class="form-control" rows="5" id="comment" style="resize: none;" 
+        placeholder="Please enter your valuable feedback here..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div>
+  <i class="fa fa-copyright"></i> 2020 Apna Ghar all rights are reserved.
+</div>
+</div><br>
+<script type="text/javascript">
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>

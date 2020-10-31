@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add Home Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="html,web Development" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="cw-css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+    .about-section {padding: 50px;text-align: center;background-color: #474e5d;color: white;}
+    .social{padding-top: 20px;}
+    .social div{height: 40px; width: 40px; line-height: 40px;border: 1px solid #ccc;border-radius: 6px;padding-left: 8px;margin-left: 5px; background-color: #007bff;cursor: pointer;}
+    .social div a i{font-size: 25px;transition: 0.3s;color: white;} 
+    .form-container input[type=text], input[type=email], select, textarea {width: 100%;padding: 12px;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;margin-top: 6px;margin-bottom: 16px;resize: vertical;}
+    .form-container input[type=submit] {background-color: #4CAF50;color: white;padding: 12px 20px;border: none;border-radius: 4px;cursor: pointer;}
+    .form-container input[type=submit]:hover {background-color: #45a049;}
+    .form-container {border-radius: 5px;background-color: #f2f2f2;padding: 20px;}
+  </style>
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">&uarr;</button>
+<div class="about-section">
+  <h1> Home Registration form </h1>
+</div>
+<nav class="navbar navbar-expand-sm navbar-dark fixed" style="background-color: #222222; color: #f2f2f2;">
+  <h3><a class="navbar-brand" href="index.html">Apna Ghar</a></h3>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about us.html">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about us.html">Properties</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-3 sidenav" style="margin: 20px 10px 20px 30px;">
+      <div class="left-bar">
+        <a href="#"><div>1 RK</div></a>
+        <a href="#"><div>1 BHK</div></a>
+        <a href="#"><div>2 BHK</div></a>
+        <a href="#"><div>3 BHK</div></a>
+        <a href="#"><div>Plot</div></a>
+      </div>
+    </div>
+    <div class="col-sm-6 text-left" style=" margin:20px 10px 20px 10px;"><br>
+       <h3 class="cw-heading">Add Home Details</h3><br>
+        <div class="form-container">
+          <form>
+            <label for="fname">Name :</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+            <label for="email">Email :</label>
+            <input type="email" id="lname" name="lastname" placeholder="Your Email.." required>
+            <label for="address">Address :</label>
+            <textarea id="address" name="subject" placeholder="your Address.." style="height:100px;resize: none;" required>
+            </textarea>
+            <label for="city">City :</label>
+            <input type="text" id="city" name="firstname" placeholder="Enter City" required>
+            <label for="price">Price :</label>
+            <input type="text" id="price" name="firstname" placeholder="Price" required>
+            <label for="about">Something About Your Property :</label>
+            <textarea id="about" name="subject" placeholder="your Address.." style="height:100px;resize: none;" required>
+            </textarea>
+            <label for="img">Image :</label>
+            <input type="file" id="img" name="myfile" multiple><br>
+            <label for="type">Type</label>
+            <select id="type" name="type">
+              <option value="Renting">Renting</option>
+              <option value="Selling">Selling</option>
+            </select><br>
+            <label for="Category">Category</label>
+            <select id="Category" name="cat">
+              <option value="1 RK">1 RK</option>
+              <option value="1 BHK">1 BHK</option>
+              <option value="2 BHK">2 BHK</option>
+              <option value="3 BHK">3 BHK</option>
+              <option value="Plot">Plot</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit" class="center">
+          </form>
+        </div><br><br>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid text-center" id="footer" style="margin-bottom:0; background-color: #3b3b3b; color: #f2f2f2; text-decoration: none;">
+  <div class="d-flex flex-md-row">
+    <div class="p-2 flex-fill justify-content-between">
+      <div>
+        <div><h3>Menu</h3></div><br>
+        <div><a href="index.html">Home</a></div>
+        <div><a href="#services">Services</a></div>
+        <div><a href="contact.html">Contact us</a></div>
+        <div><a href="about us.html">About us</a></div>
+        <div><a href="privacy.html">Copyright & Privacy Policy</a></div>
+        <div><a href="terms.html">Terms & conditions</a></div>
+      </div><br>
+    </div>
+    <div class="p-2 flex-fill">
+      <div>
+        <div><h3>Cities</h3></div><br>
+        <div><a href="#">Hyderabad</a></div>
+        <div><a href="#">Pune</a></div>
+        <div><a href="#">Delhi</a></div>
+        <div><a href="#">Deharadun</a></div>
+        <div><a href="#">Mumbai</a></div>
+        <div><a href="#">Ahmadabad</a></div>
+      </div>
+    </div>
+    <div class="p-2 flex-fill">
+      <form action="/action_page.php">
+        <div><h3>Feedback</h3></div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="comment">Feedback:</label>
+            <textarea class="form-control" rows="5" id="comment" style="resize: none;" 
+        placeholder="Please enter your valuable feedback here..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div>
+  <i class="fa fa-copyright"></i> 2020 Apna Ghar all rights are reserved.
+</div>
+</div><br>
+  <script type="text/javascript">
+  /*top btn*/
+  //Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 360px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 360 || document.documentElement.scrollTop > 360) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>
